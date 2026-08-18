@@ -1,0 +1,2984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>New Kings - Players</title>
+
+ <!-- =========================================
+         HEADER
+         ========================================= -->
+
+  
+
+
+    <style>
+
+
+
+
+@media (max-width:850px) { .site-header{height:70px;} .header-container{padding:0 20px;} .header-logo{width:85px;height:65px;} .main-nav{gap:2px;} .main-nav a{padding:25px 12px;font-size:11px;letter-spacing:1px;} .main-nav a::after{left:12px;right:12px;} }
+@media (max-width:600px) { .site-header{height:60px;} .header-container{width:100%;padding:0 12px;} .header-logo{width:65px;height:55px;} .main-nav{gap:0;} .main-nav a{padding:22px 7px;font-size:9px;letter-spacing:.5px;} .main-nav a::after{left:7px;right:7px;height:2px;} }
+@media (max-width:380px) { .site-header{height:56px;} .header-container{padding:0 8px;} .header-logo{width:55px;height:48px;} .main-nav a{padding:20px 5px;font-size:8px;letter-spacing:.3px;} .main-nav a::after{left:5px;right:5px;} }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header {
+
+    height: 78px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #32145C,
+            #1B0835
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 5px 30px
+        rgba(0,0,0,.35);
+}
+
+
+.header-container {
+
+    max-width: 1250px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo-link {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+}
+
+
+.header-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.header-logo:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.main-nav a {
+
+    position: relative;
+
+    padding:
+        29px 20px;
+
+    color:
+        rgba(255, 251, 251, 0.72);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition:
+        color .25s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color: white;
+}
+@media (max-width:850px) { .site-header{height:70px;} .header-container{padding:0 20px;} .header-logo{width:85px;height:65px;} .main-nav{gap:2px;} .main-nav a{padding:25px 12px;font-size:11px;letter-spacing:1px;} .main-nav a::after{left:12px;right:12px;} }
+@media (max-width:600px) { .site-header{height:60px;} .header-container{width:100%;padding:0 12px;} .header-logo{width:65px;height:55px;} .main-nav{gap:0;} .main-nav a{padding:22px 7px;font-size:9px;letter-spacing:.5px;} .main-nav a::after{left:7px;right:7px;height:2px;} }
+@media (max-width:380px) { .site-header{height:56px;} .header-container{padding:0 8px;} .header-logo{width:55px;height:48px;} .main-nav a{padding:20px 5px;font-size:8px;letter-spacing:.3px;} .main-nav a::after{left:5px;right:5px;} }
+
+
+
+
+
+
+.main-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 0;
+
+    height: 3px;
+
+    background: white;
+
+    transform:
+        scaleX(0);
+
+    transition:
+        transform .25s ease;
+}
+
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+
+
+.hero {
+
+    height: 400px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hero-slideshow {
+
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    opacity: 0;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 6s ease;
+}
+
+
+.slide.active {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(10,2,20,.92),
+            rgba(20,5,40,.55),
+            rgba(10,2,20,.25)
+        );
+}
+
+
+.hero-content {
+
+    position: absolute;
+
+    left: max(
+        7vw,
+        calc((100% - 1200px) / 2)
+    );
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    max-width: 650px;
+
+    z-index: 5;
+}
+
+
+.hero-small {
+
+    color:
+        #BFA7D8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(50px, 8vw, 100px);
+
+    line-height: .9;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 0;
+        height: 280px;
+ 
+        padding: 25px 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.1;
+        margin-bottom: 8px;
+         letter-spacing: 0px;
+    }
+
+    .hero p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+}
+
+.hero-content p {
+
+    margin-top: 20px;
+
+    color:
+        rgba(255,255,255,.75);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+        /* =========================================
+           KINGS COLOR THEME
+           ========================================= */
+
+        :root {
+
+            --kings-purple: #32145C;
+            --kings-purple-dark: #1B0835;
+            --kings-purple-light: #4B2380;
+
+            --black: #080808;
+            --dark-gray: #242424;
+
+            --gray: #777777;
+            --silver: #BDBDBD;
+
+            --white: #FFFFFF;
+            --off-white: #F7F7F7;
+        }
+
+
+        /* =========================================
+           RESET
+           ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* =========================================
+           PAGE
+           ========================================= */
+body {
+    min-height: 100vh;
+    padding: 0 30px 60px 30px;  /* Removed top padding, kept sides and bottom */
+    font-family: Arial, Helvetica, sans-serif;
+    background: 
+        radial-gradient(circle at top right, rgba(50, 20, 92, 0.35), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(50, 20, 92, 0.18), transparent 35%),
+        #080808;
+    color: white;
+}
+
+        /* =========================================
+           PAGE HEADER
+           ========================================= */
+
+        .page-header {
+
+            max-width: 1500px;
+
+            margin: 0 auto 50px;
+
+            text-align: center;
+        }
+
+
+        .page-header span {
+
+            color: #BFA7D8;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        .page-header h1 {
+
+            margin-top: 8px;
+
+            color: white;
+
+            font-size: clamp(40px, 5vw, 70px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .page-header p {
+
+            margin-top: 10px;
+
+            color: #888;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           PLAYER GRID
+           ========================================= */
+
+        .players-grid {
+
+            width: 100%;
+
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+
+            justify-items: center;
+
+            align-items: start;
+        }
+
+
+        
+
+        /* =========================================
+           PLAYER CARD
+           ========================================= */
+
+        .player-card {
+
+            width: 100%;
+
+            max-width: 365px;
+
+            height: 352px;
+
+            position: relative;
+
+            background: var(--white);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(0, 0, 0, 0.35),
+
+                0 0 0 1px
+                rgba(255, 255, 255, 0.08);
+
+            transition:
+
+                transform 0.35s ease,
+
+                box-shadow 0.35s ease;
+        }
+
+
+        .player-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+
+                0 20px 45px
+                rgba(0, 0, 0, 0.50),
+
+                0 0 30px
+                rgba(50, 20, 92, 0.45);
+        }
+
+
+        /* =========================================
+           LEFT SIDE
+           ========================================= */
+
+        .player-side {
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 93px;
+            height: 100%;
+
+            background: var(--off-white);
+
+            border-right: 1px solid #D9D9D9;
+
+            z-index: 5;
+        }
+
+
+        /* =========================================
+           JERSEY NUMBER
+           ========================================= */
+
+        .jersey-number {
+
+            width: 130%;
+            height: 96px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    var(--kings-purple),
+                    var(--kings-purple-dark)
+                );
+
+            color: var(--white);
+
+            font-size: 46px;
+
+            font-weight: 800;
+
+            letter-spacing: -2px;
+        }
+
+
+        .jersey-number::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            top: -70px;
+            right: -60px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+        }
+
+
+        /* =========================================
+           PLAYER DETAILS
+           ========================================= */
+
+        .details {
+
+            padding: 26px 20px;
+        }
+
+
+        .detail {
+
+            margin-bottom: 17px;
+        }
+
+
+        .detail:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .detail-label {
+
+            display: block;
+
+            color: #999999;
+
+            font-size: 10px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.4px;
+
+            margin-bottom: 2px;
+        }
+
+
+        .detail-value {
+
+            display: block;
+
+            color: #555555;
+
+            font-size: 15px;
+
+            line-height: 20px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           PLAYER IMAGE
+           ========================================= */
+
+        .player-image {
+
+            position: absolute;
+
+            left: 96px;
+            top: 0;
+
+            width: calc(100% - 96px);
+
+            height: 240px;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #eeeeee,
+                    #d7d7d7
+                );
+
+            z-index: 1;
+        }
+
+
+        .player-image img {
+
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            transition:
+
+                transform 0.6s
+                cubic-bezier(.2,.8,.2,1),
+
+                filter 0.5s ease;
+        }
+
+
+        /* =========================================
+           IMAGE HOVER
+           ========================================= */
+
+        .player-card:hover .player-image img {
+
+            transform: scale(1.06);
+
+            filter: brightness(0.82);
+        }
+
+
+        /* =========================================
+           IMAGE OVERLAY
+           ========================================= */
+
+        .player-image::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    transparent 45%,
+                    rgba(27, 8, 53, 0.50)
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity 0.4s ease;
+        }
+
+
+        .player-card:hover .player-image::after {
+
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           VIEW STATS BADGE
+           ========================================= */
+
+        .hover-text {
+
+            position: absolute;
+
+            top: 14px;
+            right: 14px;
+
+            z-index: 10;
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background: var(--kings-purple);
+
+            color: white;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            opacity: 0;
+
+            transform: translateY(-8px);
+
+            transition:
+
+                opacity 0.3s ease,
+
+                transform 0.3s ease;
+        }
+
+
+        .player-card:hover .hover-text {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           NORMAL PLAYER INFORMATION
+           ========================================= */
+
+        .player-info {
+
+            position: absolute;
+
+            left: 96px;
+            bottom: 0;
+
+            width: calc(100% - 96px);
+
+            height: 112px;
+
+            padding: 19px 25px;
+
+            background: var(--white);
+
+            z-index: 3;
+
+            transition:
+
+                transform 0.45s
+                cubic-bezier(.2,.8,.2,1),
+
+                opacity 0.35s ease;
+        }
+
+
+        .first-name {
+
+            color: #777777;
+
+            font-size: 200px;
+
+            line-height: 18px;
+
+            font-weight: 400;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .last-name {
+
+            color: var(--kings-purple);
+
+            font-size: 28px;
+
+            line-height: 27px;
+
+            font-weight: 900;
+
+            letter-spacing: -0.8px;
+
+            text-transform: uppercase;
+        }
+
+
+        .position {
+
+            margin-top: 7px;
+
+            color: #888888;
+
+            font-size: 11px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           STATS PANEL
+           ========================================= */
+
+        .stats-panel {
+
+            position: absolute;
+
+            left: 96px;
+            bottom: 0;
+
+            width: calc(100% - 96px);
+
+            height: 112px;
+
+            padding: 14px 15px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            grid-template-rows:
+                repeat(2, 1fr);
+
+            gap: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    var(--kings-purple),
+                    var(--kings-purple-dark)
+                );
+
+            color: white;
+
+            z-index: 4;
+
+            transform: translateY(100%);
+
+            transition:
+
+                transform 0.45s
+                cubic-bezier(.2,.8,.2,1);
+        }
+
+
+        /* =========================================
+           INDIVIDUAL STAT
+           ========================================= */
+
+        .stat {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            border-right:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            opacity: 0;
+
+            transform: translateY(10px);
+
+            transition:
+
+                opacity 0.3s ease,
+
+                transform 0.3s ease;
+        }
+
+
+        .stat:nth-child(5),
+        .stat:nth-child(10) {
+
+            border-right: none;
+        }
+
+
+        .stat:nth-child(-n+5) {
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.18);
+        }
+
+
+        /* =========================================
+           STAT LABEL
+           ========================================= */
+
+        .stat-label {
+
+            margin-bottom: 2px;
+
+            color:
+                rgba(255,255,255,0.62);
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           STAT VALUE
+           ========================================= */
+
+        .stat-value {
+
+            color: white;
+
+            font-size: 17px;
+
+            line-height: 18px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================
+           SEASON STATS LABEL
+           ========================================= */
+
+        .stats-panel::before {
+
+            content: "SEASON STATS";
+
+            position: absolute;
+
+            top: -23px;
+            left: 0;
+
+            padding: 5px 12px;
+
+            background: var(--kings-purple);
+
+            color: white;
+
+            border-radius:
+                5px 5px 0 0;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            opacity: 0;
+
+            transform: translateY(10px);
+
+            transition:
+
+                opacity 0.3s ease,
+
+                transform 0.3s ease;
+        }
+
+
+        .player-card:hover .stats-panel::before {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           SHOW STATS ON HOVER
+           ========================================= */
+
+        .player-card:hover .stats-panel {
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           HIDE PLAYER INFO
+           ========================================= */
+
+        .player-card:hover .player-info {
+
+            transform: translateY(100%);
+
+            opacity: 0;
+        }
+
+
+        /* =========================================
+           STAGGERED STAT ANIMATION
+           ========================================= */
+
+        .player-card:hover .stat {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        .player-card:hover .stat:nth-child(1) {
+            transition-delay: 0.08s;
+        }
+
+        .player-card:hover .stat:nth-child(2) {
+            transition-delay: 0.11s;
+        }
+
+        .player-card:hover .stat:nth-child(3) {
+            transition-delay: 0.14s;
+        }
+
+        .player-card:hover .stat:nth-child(4) {
+            transition-delay: 0.17s;
+        }
+
+        .player-card:hover .stat:nth-child(5) {
+            transition-delay: 0.20s;
+        }
+
+        .player-card:hover .stat:nth-child(6) {
+            transition-delay: 0.23s;
+        }
+
+        .player-card:hover .stat:nth-child(7) {
+            transition-delay: 0.26s;
+        }
+
+        .player-card:hover .stat:nth-child(8) {
+            transition-delay: 0.29s;
+        }
+
+        .player-card:hover .stat:nth-child(9) {
+            transition-delay: 0.32s;
+        }
+
+        .player-card:hover .stat:nth-child(10) {
+            transition-delay: 0.35s;
+        }
+
+
+        /* =========================================
+           PURPLE CARD ACCENT
+           ========================================= */
+
+        .player-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 5px;
+
+            height: 0;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    var(--kings-purple-light),
+                    var(--kings-purple)
+                );
+
+            z-index: 20;
+
+            transition:
+                height 0.4s ease;
+        }
+
+
+        .player-card:hover::before {
+
+            height: 100%;
+        }
+
+
+        /* =========================================
+           MOBILE
+           3 PLAYERS PER ROW
+           ========================================= */
+
+
+        /* =========================================
+           901px AND UP — COMPACT DESKTOP TEXT
+           Keeps the same card design but prevents
+           text from becoming oversized on desktop.
+           ========================================= */
+        @media (min-width: 901px) {
+            .jersey-number {
+                font-size: clamp(34px, 3.1vw, 42px);
+            }
+
+            .details {
+                padding: 20px 16px;
+            }
+
+            .detail {
+                margin-bottom: 13px;
+            }
+
+            .detail-label {
+                font-size: 8px;
+                letter-spacing: 0.3px;
+            }
+
+            .detail-value {
+                font-size: 16px;
+                line-height: 17px;
+            }
+
+            .hover-text {
+                top: 11px;
+                right: 11px;
+                padding: 6px 10px;
+                font-size: 8px;
+            }
+
+            .player-info {
+                padding: 16px 20px;
+            }
+
+            .first-name {
+                font-size: 13px;
+                line-height: 15px;
+            }
+
+            .last-name {
+                font-size: 23px;
+                line-height: 23px;
+            }
+
+            .position {
+                margin-top: 5px;
+                font-size: 9px;
+            }
+
+            .stats-panel {
+                padding: 11px 12px;
+            }
+
+            .stat-label {
+                font-size: 7px;
+                letter-spacing: 0.7px;
+            }
+
+            .stat-value {
+                font-size: 14px;
+                line-height: 15px;
+            }
+
+            .stats-panel::before {
+                top: -20px;
+                padding: 4px 9px;
+                font-size: 7px;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            body {
+
+                padding:
+                    40px 15px;
+            }
+
+
+            .players-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                gap: 18px;
+            }
+
+
+            .player-card {
+
+                max-width: none;
+
+                width: 100%;
+
+                height: auto;
+
+                aspect-ratio:
+                    365 / 352;
+            }
+
+
+            .player-side {
+
+                width: 29.3%;
+            }
+
+
+            .player-image {
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 68.2%;
+            }
+
+
+            .player-info {
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 31.8%;
+
+                padding:
+                    5.5% 6.5%;
+            }
+
+
+            .stats-panel {
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 35.8%;
+
+                padding:
+                    4% 4%;
+            }
+
+
+            .jersey-number {
+
+                height: 27.3%;
+
+                font-size:
+                    clamp(20px, 5vw, 46px);
+            }
+
+
+            .details {
+
+                padding:
+                    12% 12%;
+            }
+
+
+            .detail {
+
+                margin-bottom:
+                    12%;
+            }
+
+
+            .detail-label {
+
+                font-size:
+                    clamp(5px, 1.1vw, 10px);
+            }
+
+
+            .detail-value {
+
+                font-size:
+                    clamp(9px, 2.2vw, 20px);
+
+                line-height:
+                    1.1;
+            }
+
+
+            .first-name {
+
+                font-size:
+                    clamp(7px, 1.7vw, 16px);
+
+                line-height:
+                    1.1;
+            }
+
+
+            .last-name {
+
+                font-size:
+                    clamp(10px, 2.8vw, 28px);
+
+                line-height:
+                    0.95;
+            }
+
+
+            .position {
+
+                margin-top:
+                    4%;
+
+                font-size:
+                    clamp(5px, 1.1vw, 11px);
+            }
+
+
+            .hover-text {
+
+                top: 6%;
+
+                right: 5%;
+
+                padding:
+                    4px 7px;
+
+                font-size:
+                    clamp(5px, 1vw, 9px);
+            }
+
+
+            .stat-label {
+
+                font-size:
+                    clamp(4px, 0.9vw, 8px);
+
+                letter-spacing:
+                    0.5px;
+            }
+
+
+            .stat-value {
+
+                font-size:
+                    clamp(8px, 1.8vw, 17px);
+
+                line-height:
+                    1.1;
+            }
+
+
+            .stats-panel::before {
+
+                top:
+                    -17px;
+
+                padding:
+                    4px 7px;
+
+                font-size:
+                    5px;
+            }
+        }
+
+
+        /* =========================================
+           SMALL MOBILE
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding:
+                    30px 8px;
+            }
+
+
+            .page-header {
+
+                margin-bottom: 30px;
+            }
+
+
+            .page-header span {
+
+                font-size: 8px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .page-header h1 {
+
+                font-size: 34px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .page-header p {
+
+                font-size: 9px;
+            }
+
+
+            .players-grid {
+
+                grid-template-columns:
+                    repeat(3, minmax(0, 1fr));
+
+                gap:
+                    12px 7px;
+
+                width: 100%;
+            }
+
+
+            .goalie {
+
+                margin-bottom:
+                    5px;
+                    
+            }
+
+
+            .player-card {
+
+                border-radius:
+                    8px;
+
+                box-shadow:
+                    0 5px 15px
+                    rgba(0,0,0,.35);
+            }
+
+
+            .player-card:hover {
+
+                transform:
+                    translateY(-3px);
+            }
+
+
+            /* Disable hover behavior on touch devices.
+               JavaScript handles tap instead. */
+
+            .player-card:hover {
+
+                box-shadow:
+                    0 5px 15px
+                    rgba(0,0,0,.35);
+            }
+
+
+            .player-card:hover .player-image img {
+
+                transform: none;
+
+                filter: none;
+            }
+
+
+            .player-card:hover .player-image::after {
+
+                opacity: 0;
+            }
+
+
+            .player-card:hover .hover-text {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-8px);
+            }
+
+
+            .player-card:hover .stats-panel {
+
+                transform:
+                    translateY(100%);
+            }
+
+
+            .player-card:hover .player-info {
+
+                transform:
+                    translateY(0);
+
+                opacity: 1;
+            }
+
+
+            .player-card:hover .stat {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+            }
+
+
+            .player-card:hover::before {
+
+                height: 0;
+            }
+
+
+            /* =====================================
+               ACTIVE CARD — MOBILE TAP
+               ===================================== */
+
+            .player-card.active {
+
+                transform:
+                    translateY(-4px);
+
+                box-shadow:
+
+                    0 15px 30px
+                    rgba(0,0,0,.5),
+
+                    0 0 20px
+                    rgba(50,20,92,.45);
+            }
+
+
+            .player-card.active .player-image img {
+
+                transform:
+                    scale(1.06);
+
+                filter:
+                    brightness(.82);
+            }
+
+
+            .player-card.active .player-image::after {
+
+                opacity: 1;
+            }
+
+
+            .player-card.active .hover-text {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+
+            .player-card.active .stats-panel {
+
+                transform:
+                    translateY(0);
+            }
+
+
+            .player-card.active .player-info {
+
+                transform:
+                    translateY(100%);
+
+                opacity: 0;
+            }
+
+
+            .player-card.active .stat {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+
+            .player-card.active::before {
+
+                height: 100%;
+            }
+
+
+            .player-card.active
+            .stats-panel::before {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+
+            /* =====================================
+               MOBILE CARD TEXT
+               ===================================== */
+
+            .jersey-number {
+
+                font-size:
+                    clamp(18px, 5vw, 30px);
+            }
+
+
+            .details {
+
+                padding:
+                    16% 12%;
+            }
+
+
+            .detail {
+
+                margin-bottom:
+                    17%;
+            }
+
+
+            .detail-label {
+
+                font-size:
+                    clamp(4px, 1.5vw, 7px);
+            }
+
+
+            .detail-value {
+
+                font-size:
+                    clamp(8px, 2.8vw, 14px);
+            }
+
+
+            .player-info {
+
+                padding:
+                    6% 7%;
+            }
+
+
+            .first-name {
+
+                font-size:
+                    clamp(5px, 2vw, 10px);
+            }
+
+
+            .last-name {
+
+                font-size:
+                    clamp(7px, 3vw, 15px);
+            }
+
+
+            .position {
+
+                font-size:
+                    clamp(4px, 1.4vw, 7px);
+
+                margin-top:
+                    4%;
+            }
+
+
+            .hover-text {
+
+                font-size:
+                    clamp(4px, 1.3vw, 6px);
+
+                padding:
+                    3px 5px;
+            }
+
+
+            .stats-panel {
+
+                padding:
+                    4% 3%;
+            }
+
+
+            .stat-label {
+
+                font-size:
+                    clamp(3px, 1vw, 5px);
+            }
+
+
+            .stat-value {
+
+                font-size:
+                    clamp(6px, 2vw, 10px);
+            }
+
+
+            .stats-panel::before {
+
+                top:
+                    -12px;
+
+                padding:
+                    3px 5px;
+
+                font-size:
+                    4px;
+            }
+        }
+
+
+        /* =========================================
+           VERY SMALL PHONES
+           ========================================= */
+
+        @media (max-width: 380px) {
+
+            body {
+
+                padding-left:
+                    5px;
+
+                padding-right:
+                    5px;
+            }
+
+
+            .players-grid {
+
+                gap:
+                    10px 5px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+           ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .player-card,
+            .player-card *,
+            .player-card::before {
+
+                transition: none !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PAGE HEADER
+         ========================================= -->
+
+
+         <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo-link">
+
+                <img
+                    src="KINGSLOGO.png"
+                    alt="Manila Kings"
+                    class="header-logo"
+                >
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    HOME
+                </a>
+
+                <a href="team.html">
+                    TEAM
+                </a>
+
+                <a href="#">
+                    STATS
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+        <section class="hero">
+
+  <div class="hero-slideshow">
+
+                <div
+                    class="slide active"
+                    style="background-image: url('pbmtsmpl.jpg');">
+                </div>
+
+                <div
+                    class="slide"
+                    style="background-image: url('images/pubmat2.jpg');">
+                </div>
+
+                <div
+                    class="slide"
+                    style="background-image: url('pubmat3.jpg');">
+                </div>
+
+            </div>
+    
+
+
+            <!-- DARK OVERLAY -->
+
+            <div class="hero-overlay"></div>
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    
+                </div>
+
+                <h1>
+                    NEW<br> KINGS
+                </h1>
+
+                <p>
+                    LION'S CUP TOURNAMENT
+                </p>
+
+
+            </div>
+
+
+            <!-- SLIDESHOW DOTS -->
+
+     
+
+        </section>
+
+
+    <!-- =========================================
+         PLAYER GRID
+         ========================================= -->
+
+    <main class="players-grid">
+
+
+        <!-- =====================================
+             GOALIE
+             ===================================== -->
+
+        <div class="player-card goalie">
+
+
+            <div class="player-side">
+
+                <div class="jersey-number">
+                    G
+                </div>
+
+
+                <div class="details">
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            AGE
+                        </span>
+
+                        <span class="detail-value">
+                            26
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            CITY
+                        </span>
+
+                        <span class="detail-value">
+                            N/A
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            HT
+                        </span>
+
+                        <span class="detail-value">
+                            N/A
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span class="detail-label">
+                            WT
+                        </span>
+
+                        <span class="detail-value">
+                            180
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="player-image">
+
+                <img
+                    src="mikalee.jpg"
+                    alt="Goalie"
+                >
+
+                <div class="hover-text">
+                    VIEW STATS
+                </div>
+
+            </div>
+
+
+            <div class="player-info">
+
+                <div class="first-name">
+                    MIKA
+                </div>
+
+                <div class="last-name">
+                    LEE
+                </div>
+
+                <div class="position">
+                    GOALIE
+                </div>
+
+            </div>
+
+
+            <div class="stats-panel">
+
+                <div class="stat">
+                    <div class="stat-label">GP</div>
+                    <div class="stat-value">24</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">G</div>
+                    <div class="stat-value">0</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">A</div>
+                    <div class="stat-value">2</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">PTS</div>
+                    <div class="stat-value">2</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">PM</div>
+                    <div class="stat-value">+5</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">PPG</div>
+                    <div class="stat-value">0</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">SHG</div>
+                    <div class="stat-value">0</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">EG</div>
+                    <div class="stat-value">0</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">GWG</div>
+                    <div class="stat-value">0</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">P/G</div>
+                    <div class="stat-value">0.08</div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- =====================================
+             PLAYER 1 — 
+             ===================================== -->
+<div class="player-card">
+
+            <div class="player-side">
+
+                <div class="jersey-number">
+                    C
+                </div>
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span class="detail-label">AGE</span>
+                        <span class="detail-value">26</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">CITY</span>
+                        <span class="detail-value">CAL</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">HT</span>
+                        <span class="detail-value">5'8</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">WT</span>
+                        <span class="detail-value">180</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="player-image">
+
+                <img
+                    src="seanserrano.jpg"
+                    alt="Sean"
+                >
+
+                <div class="hover-text">
+                    VIEW STATS
+                </div>
+
+            </div>
+
+
+            <div class="player-info">
+
+                <div class="first-name">
+                    SEAN
+                </div>
+
+                <div class="last-name">
+                    SERRANO
+                </div>
+
+                <div class="position">
+                    CENTER
+                </div>
+
+            </div>
+
+
+            <div class="stats-panel">
+
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             PLAYER 1 
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+
+                <div class="jersey-number">
+                    D
+                </div>
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span class="detail-label">AGE</span>
+                        <span class="detail-value">26</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">CITY</span>
+                        <span class="detail-value">CAL</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">HT</span>
+                        <span class="detail-value">5'8</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">WT</span>
+                        <span class="detail-value">180</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="player-image">
+
+                <img
+                    src="dennismayugba.jpg"
+                    alt="DENNIS"
+                >
+
+                <div class="hover-text">
+                    VIEW STATS
+                </div>
+
+            </div>
+
+
+            <div class="player-info">
+
+                <div class="first-name">
+                    DENNIS
+                </div>
+
+                <div class="last-name">
+                    MAYUGBA
+                </div>
+
+                <div class="position">
+                    DEFENSEMAN
+                </div>
+
+            </div>
+
+
+            <div class="stats-panel">
+
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 2 — LAWRENCE
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+
+                <div class="jersey-number">D</div>
+
+                <div class="details">
+                    <div class="detail">
+                        <span class="detail-label">AGE</span>
+                        <span class="detail-value">26</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">CITY</span>
+                        <span class="detail-value">CAL</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">HT</span>
+                        <span class="detail-value">5'8</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">WT</span>
+                        <span class="detail-value">180</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="player-image">
+                <img src="lawrenceablites.jpg" alt="Lawrence">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">LAWRENCE</div>
+                <div class="last-name">ABLITES</div>
+                <div class="position">DEFENSEMAN</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 3 — SHOUNE
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+
+                <div class="jersey-number">W</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+
+            </div>
+
+            <div class="player-image">
+                <img src="zoelee.jpg" alt="Shoune">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">ZOE</div>
+                <div class="last-name">LEE</div>
+                <div class="position">WINGER</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 4 — GELO
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+
+                <div class="jersey-number">W</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+
+            </div>
+
+            <div class="player-image">
+                <img src="carlosesguerra.jpg" alt="Gelo">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">CARLOS</div>
+                <div class="last-name">ESGUERRA</div>
+                <div class="position">WINGER</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 5 — CARLOS
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">W</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="jpsephbundajr.jpg" alt="Carlos">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">JOSEPH</div>
+                <div class="last-name">BUNDA JR.</div>
+                <div class="position">WINGER</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 6 — JAY
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">D</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="zachary.jpg" alt="Jay">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">ZACHARY</div>
+                <div class="last-name">DE GUZMAN</div>
+                <div class="position">DEFENSEMAN</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 7 — ZOE
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">D</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="jayfelipe.jpg" alt="Zoe">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">JAY</div>
+                <div class="last-name">FELIPE</div>
+                <div class="position">DEFENSEMAN</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 8 — SHAIRA
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">W</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="angelomarquez.jpg" alt="Shaira">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">ANGELO</div>
+                <div class="last-name">MARQUEZ</div>
+                <div class="position">WINGER</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 9 — KERVIN
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">D</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="shoune.jpg" alt="Kervin">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">SHOUNE</div>
+                <div class="last-name">AMPATI</div>
+                <div class="position">DEFENSEMAN</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 10 — ZACH
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">C</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="joncaleb.jpg" alt="Zach">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">JON CALEB</div>
+                <div class="last-name">CRUZ</div>
+                <div class="position">CENTER</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 11 — CALEB
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">00</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="   .jpg" alt="Caleb">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">RHAFI</div>
+                <div class="last-name">TAWANO</div>
+                <div class="position">FORWARD</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             PLAYER 12 — JOSEPH
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">12</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="joseph.jpg" alt="Joseph">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">JOSEPH</div>
+                <div class="last-name">PLAYER</div>
+                <div class="position">FORWARD</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             EXTRA PLAYER 13
+             ===================================== -->
+
+        <div class="player-card">
+
+            <div class="player-side">
+                <div class="jersey-number">13</div>
+
+                <div class="details">
+                    <div class="detail"><span class="detail-label">AGE</span><span class="detail-value">26</span></div>
+                    <div class="detail"><span class="detail-label">CITY</span><span class="detail-value">CAL</span></div>
+                    <div class="detail"><span class="detail-label">HT</span><span class="detail-value">5'8</span></div>
+                    <div class="detail"><span class="detail-label">WT</span><span class="detail-value">180</span></div>
+                </div>
+            </div>
+
+            <div class="player-image">
+                <img src="player13.jpg" alt="Player 13">
+                <div class="hover-text">VIEW STATS</div>
+            </div>
+
+            <div class="player-info">
+                <div class="first-name">PLAYER</div>
+                <div class="last-name">THIRTEEN</div>
+                <div class="position">FORWARD</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat"><div class="stat-label">GP</div><div class="stat-value">24</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">18</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">27</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">45</div></div>
+                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">+12</div></div>
+                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">5</div></div>
+                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">2</div></div>
+                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">13</div></div>
+                <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">3</div></div>
+                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">1.88</div></div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script>
+
+        /*
+         * MOBILE CARD CLICK
+         *
+         * On desktop:
+         *   Hover = show stats
+         *
+         * On mobile:
+         *   Tap = show stats
+         *   Tap again = hide stats
+         *
+         * Only one card can be active at a time.
+         */
+
+        const cards =
+            document.querySelectorAll(".player-card");
+
+
+        cards.forEach(card => {
+
+            card.addEventListener("click", function () {
+
+                /*
+                 * Only use click behavior
+                 * on mobile screens.
+                 */
+
+                if (window.innerWidth <= 600) {
+
+                    /*
+                     * Close every other card.
+                     */
+
+                    cards.forEach(otherCard => {
+
+                        if (otherCard !== card) {
+
+                            otherCard.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    });
+
+
+                    /*
+                     * Toggle this card.
+                     */
+
+                    card.classList.toggle("active");
+                }
+
+            });
+
+        });
+
+
+        /*
+         * If the screen is resized back to desktop,
+         * remove mobile active states.
+         */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 600) {
+
+                cards.forEach(card => {
+
+                    card.classList.remove(
+                        "active"
+                    );
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+
+<style>
+
+.players-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+padding-top: 50px;
+    
+}
+
+
+
+.player-card {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+
+
+@media (max-width: 600px) {
+    .players-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px 16px !important;
+    }
+
+
+
+    .player-card {
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .players-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 10px 5px !important;
+    }
+}
+</style>
