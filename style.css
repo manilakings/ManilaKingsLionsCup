@@ -662,6 +662,8 @@ a {
 
     height: 130px;
 
+border-radius: 15px;
+
     object-fit: contain;
 
     margin-bottom: 10px;
