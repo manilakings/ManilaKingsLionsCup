@@ -400,8 +400,9 @@
     .hero h1 {
         font-size: 28px;
         line-height: 1.1;
-        margin-bottom: 8px;
+        margin-bottom: 1px;
          letter-spacing: 0px;
+         margin-top: 20px;
     }
 
     .hero p {
@@ -413,12 +414,12 @@
 
 .hero-content p {
 
-    margin-top: 20px;
+    margin-top: 2px;
 
     color:
         rgba(255,255,255,.75);
 
-    font-size: 18px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 
@@ -965,49 +966,37 @@ body {
            STATS PANEL
            ========================================= */
 
-        .stats-panel {
+      .stats-panel {
+    position: absolute;
+    left: 96px;
+    bottom: 0;
+    width: calc(100% - 96px);
+    height: 112px;
 
-            position: absolute;
+    padding: 14px 15px;
 
-            left: 96px;
-            bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
 
-            width: calc(100% - 96px);
+    gap: 0;
 
-            height: 112px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--kings-purple),
+            var(--kings-purple-dark)
+        );
 
-            padding: 14px 15px;
+    color: white;
+    z-index: 4;
 
-            display: grid;
+    transform: translateY(100%);
 
-            grid-template-columns:
-                repeat(5, 1fr);
-
-            grid-template-rows:
-                repeat(2, 1fr);
-
-            gap: 0;
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    var(--kings-purple),
-                    var(--kings-purple-dark)
-                );
-
-            color: white;
-
-            z-index: 4;
-
-            transform: translateY(100%);
-
-            transition:
-
-                transform 0.45s
-                cubic-bezier(.2,.8,.2,1);
-        }
-
+    transition:
+        transform 0.45s
+        cubic-bezier(.2,.8,.2,1);
+}
 
         /* =========================================
            INDIVIDUAL STAT
@@ -1041,41 +1030,23 @@ body {
         }
 
 
-        .stat:nth-child(5),
-        .stat:nth-child(10) {
-
-            border-right: none;
-        }
-
-
-        .stat:nth-child(-n+5) {
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.18);
-        }
-
 
         /* =========================================
            STAT LABEL
            ========================================= */
-
         .stat-label {
+    margin-bottom: 3px;
 
-            margin-bottom: 2px;
+    color: rgba(255,255,255,0.85);
 
-            color:
-                rgba(255,255,255,0.62);
+    font-size: 14px;
+    line-height: 15px;
 
-            font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-        }
-
+    text-transform: uppercase;
+         }
 
         /* =========================================
            STAT VALUE
@@ -1265,73 +1236,193 @@ body {
            Keeps the same card design but prevents
            text from becoming oversized on desktop.
            ========================================= */
-        @media (min-width: 901px) {
-            .jersey-number {
-                font-size: clamp(34px, 3.1vw, 42px);
+        @media (max-width: 1500px) {
+
+            body {
+
+                padding:
+                    40px 15px;
             }
 
-            .details {
-                padding: 20px 16px;
+
+            .players-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                gap: 18px;
             }
 
-            .detail {
-                margin-bottom: 13px;
+
+            .player-card {
+
+                max-width: none;
+
+                width: 100%;
+
+                height: auto;
+
+                aspect-ratio:
+                    365 / 352;
             }
 
-            .detail-label {
-                font-size: 8px;
-                letter-spacing: 0.3px;
+
+            .player-side {
+
+                width: 29.3%;
             }
 
-            .detail-value {
-                font-size: 16px;
-                line-height: 17px;
+
+            .player-image {
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 68.2%;
             }
 
-            .hover-text {
-                top: 11px;
-                right: 11px;
-                padding: 6px 10px;
-                font-size: 8px;
-            }
 
             .player-info {
-                padding: 16px 20px;
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 31.8%;
+
+                padding:
+                    5.5% 6.5%;
             }
 
-            .first-name {
-                font-size: 13px;
-                line-height: 15px;
-            }
-
-            .last-name {
-                font-size: 23px;
-                line-height: 23px;
-            }
-
-            .position {
-                margin-top: 5px;
-                font-size: 9px;
-            }
 
             .stats-panel {
-                padding: 11px 12px;
+
+                left: 26.3%;
+
+                width: 73.7%;
+
+                height: 35.8%;
+
+                padding:
+                    4% 4%;
             }
+
+
+            .jersey-number {
+
+                height: 27.3%;
+
+                font-size:
+                    clamp(20px, 5vw, 46px);
+            }
+
+
+            .details {
+
+                padding:
+                    12% 12%;
+            }
+
+
+            .detail {
+
+                margin-bottom:
+                    12%;
+            }
+
+
+            .detail-label {
+
+                font-size:
+                    clamp(5px, 1.1vw, 10px);
+            }
+
+
+            .detail-value {
+
+                font-size:
+                    clamp(9px, 2.2vw, 20px);
+
+                line-height:
+                    1.1;
+            }
+
+
+            .first-name {
+
+                font-size:
+                    clamp(3px, 1.5vw, 14px);
+
+                line-height:
+                    1.1;
+            }
+
+
+            .last-name {
+
+                font-size:
+                    clamp(10px, 1.8vw, 28px);
+
+                line-height:
+                    0.95;
+            }
+
+
+            .position {
+
+                margin-top:
+                    4%;
+
+                font-size:
+                    clamp(5px, 1.1vw, 11px);
+            }
+
+
+            .hover-text {
+
+                top: 6%;
+
+                right: 5%;
+
+                padding:
+                    4px 7px;
+
+                font-size:
+                    clamp(5px, 1vw, 9px);
+            }
+
 
             .stat-label {
-                font-size: 7px;
-                letter-spacing: 0.7px;
+
+                font-size:
+                    clamp(4px, 0.9vw, 8px);
+
+                letter-spacing:
+                    0.5px;
             }
+
 
             .stat-value {
-                font-size: 14px;
-                line-height: 15px;
+
+                font-size:
+                    clamp(8px, 1.8vw, 17px);
+
+                line-height:
+                    1.1;
             }
 
+
             .stats-panel::before {
-                top: -20px;
-                padding: 4px 9px;
-                font-size: 7px;
+
+                top:
+                    -17px;
+
+                padding:
+                    4px 7px;
+
+                font-size:
+                    5px;
             }
         }
 
@@ -1451,7 +1542,7 @@ body {
             .first-name {
 
                 font-size:
-                    clamp(7px, 1.7vw, 16px);
+                    clamp(3px, 1.5vw, 14px);
 
                 line-height:
                     1.1;
@@ -1461,7 +1552,7 @@ body {
             .last-name {
 
                 font-size:
-                    clamp(10px, 2.8vw, 28px);
+                    clamp(10px, 1.8vw, 28px);
 
                 line-height:
                     0.95;
@@ -1524,6 +1615,12 @@ body {
                     5px;
             }
         }
+
+
+
+
+
+
 
 
         /* =========================================
@@ -1804,14 +1901,14 @@ body {
             .first-name {
 
                 font-size:
-                    clamp(5px, 2vw, 10px);
+                    clamp(5px, 2vw, 11px);
             }
 
 
             .last-name {
 
                 font-size:
-                    clamp(7px, 3vw, 15px);
+                    clamp(6px, 2.4vw, 15px);
             }
 
 
@@ -2010,7 +2107,7 @@ body {
 
         </section>
 
-
+DENN
     <!-- =========================================
          PLAYER GRID
          ========================================= -->
@@ -2019,18 +2116,15 @@ body {
 
 
         <!-- =====================================
-             GOALIE
+             GOALIE FRANCIS
              ===================================== -->
-
-        <div class="player-card goalie">
-
+        <div class="player-card">
 
             <div class="player-side">
 
                 <div class="jersey-number">
                     31
                 </div>
-
 
                 <div class="details">
 
@@ -2056,7 +2150,6 @@ body {
 
                 </div>
 
-
             </div>
 
 
@@ -2064,7 +2157,7 @@ body {
 
                 <img
                     src="TTFRANCIS.jpg"
-                    alt="Goalie"
+                    alt="Sean"
                 >
 
                 <div class="hover-text">
@@ -2093,63 +2186,20 @@ body {
 
             <div class="stats-panel">
 
-                <div class="stat">
-                    <div class="stat-label">GP</div>
-                    <div class="stat-value">24</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">G</div>
-                    <div class="stat-value">0</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">A</div>
-                    <div class="stat-value">2</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">PTS</div>
-                    <div class="stat-value">2</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">PM</div>
-                    <div class="stat-value">+5</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">PPG</div>
-                    <div class="stat-value">0</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">SHG</div>
-                    <div class="stat-value">0</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">EG</div>
-                    <div class="stat-value">0</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">GWG</div>
-                    <div class="stat-value">0</div>
-                </div>
-
-                <div class="stat">
-                    <div class="stat-label">P/G</div>
-                    <div class="stat-value">0.08</div>
-                </div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">SOG</div><div class="stat-value">15</div></div>
+                <div class="stat"><div class="stat-label">SVS</div><div class="stat-value">11</div></div>
+                <div class="stat"><div class="stat-label">TS</div><div class="stat-value">0</div></div>
 
             </div>
 
         </div>
+
+
         <!-- =====================================
-             PLAYER 1 — 
+             PLAYER 1 — RYLSON
              ===================================== -->
-<div class="player-card">
+        <div class="player-card">
 
             <div class="player-side">
 
@@ -2229,7 +2279,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 1 
+             PLAYER 1 JEREMY
              ===================================== -->
 
         <div class="player-card">
@@ -2301,16 +2351,11 @@ body {
 
             <div class="stats-panel">
 
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
 
             </div>
 
@@ -2319,7 +2364,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 2 — LAWRENCE
+             PLAYER 2 — MICHAEL
              ===================================== -->
 
         <div class="player-card">
@@ -2372,12 +2417,7 @@ body {
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2385,7 +2425,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 3 — SHOUNE
+             PLAYER 3 — ROLANDO
              ===================================== -->
 
         <div class="player-card">
@@ -2433,16 +2473,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2450,7 +2485,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 4 — GELO
+             PLAYER 4 — LUWEN
              ===================================== -->
 
         <div class="player-card">
@@ -2498,16 +2533,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2515,7 +2545,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 5 — CARLOS
+             PLAYER 5 — KEVIN
              ===================================== -->
 
         <div class="player-card">
@@ -2566,12 +2596,7 @@ body {
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2579,7 +2604,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 6 — JAY
+             PLAYER 6 — GILBERT
              ===================================== -->
 
         <div class="player-card">
@@ -2626,16 +2651,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
+                <div class="stat"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2643,7 +2663,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 7 — ZOE
+             PLAYER 7 — JESSIE
              ===================================== -->
 
         <div class="player-card">
@@ -2690,16 +2710,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2707,7 +2722,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 8 — SHAIRA
+             PLAYER 8 — REDK
              ===================================== -->
 
         <div class="player-card">
@@ -2766,7 +2781,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 9 — KERVIN
+             PLAYER 9 — NICO
              ===================================== -->
 
         <div class="player-card">
@@ -2813,16 +2828,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2830,7 +2840,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 10 — ZACH
+             PLAYER 10 — BRIAN
              ===================================== -->
 
         <div class="player-card">
@@ -2877,16 +2887,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
+                <div class="stat"><div class="stat-label">G</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
+                <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
@@ -2894,7 +2899,7 @@ body {
 
 
         <!-- =====================================
-             PLAYER 11 — CALEB
+             PLAYER 11 — RHAFI
              ===================================== -->
 
         <div class="player-card">
@@ -2941,16 +2946,11 @@ body {
             </div>
 
             <div class="stats-panel">
-                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">0</div></div>
+                  <div class="stat"><div class="stat-label">GP</div><div class="stat-value">1</div></div>
                 <div class="stat"><div class="stat-label">G</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">A</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">PTS</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PM</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">PPG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">SHG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">EG</div><div class="stat-value">0</div></div>
                 <div class="stat"><div class="stat-label">GWG</div><div class="stat-value">0</div></div>
-                <div class="stat"><div class="stat-label">P/G</div><div class="stat-value">0</div></div>
             </div>
 
         </div>
